@@ -8,7 +8,7 @@ if len(word) > 5 or len(word) < 5:
     exit()
 letter: str = input("Enter a single character: ")
 if len(letter) > 1 or len(letter) < 1:
-    print( "Error: Character must be a single character ")
+    print("Error: Character must be a single character ")
     exit()
 print("Searching for " + letter + " in " + word)
 instance: int = 0
