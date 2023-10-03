@@ -7,8 +7,9 @@ WHITE_BOX: str = "\U00002B1C"
 GREEN_BOX: str = "\U0001F7E9"
 YELLOW_BOX: str = "\U0001F7E8"
 
+
 def contains_char(any_len: str, single_char: str) -> bool:
-    """Searches for a character at any index of another string of characters and then returns a boolean statement"""
+    """Searches for a character at any index of another string of characters and then returns a boolean statement."""
     assert len(single_char) == 1
     index: int = 0
     while (index < len(any_len)):
@@ -20,7 +21,7 @@ def contains_char(any_len: str, single_char: str) -> bool:
 
 
 def emojified(guess: str, secret: str) -> str:
-    """Check if guess letters match secret word by using a string of different colored emojis"""
+    """Check if guess letters match secret word by using a string of different colored emojis."""
     assert len(guess) == len(secret)
     index: int = 0
     store: str = ""
@@ -37,7 +38,7 @@ def emojified(guess: str, secret: str) -> str:
 
 
 def input_guess(expected_length: int) -> str:
-    """Check if guess is the proper length of secret word according to user entry and then return the entry"""
+    """Check if guess is the proper length of secret word according to user entry and then return the entry."""
     guess: str = input(f"Enter a {str(expected_length)} character word: ")
     while len(guess) > expected_length or len(guess) < expected_length:
         guess = input(f"That wasn't {str(expected_length)} chars! Try again: ")
