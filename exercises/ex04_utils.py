@@ -7,6 +7,9 @@ def all(list: list[int], given_int: int) -> bool:
     """Determine if all the numbers in a list are the same as given number."""
     check: bool = True
     index: int = 0
+    if len(list) == 0:
+        check = False
+        return check
     while index < len(list):
         if list[index] != given_int:
             check = False
@@ -26,6 +29,7 @@ def max(input: list[int]) -> int:
             big = input[indx]
         indx += 1
     return big
+
 
 def is_equal(list_1: list[int], list_2: list[int]) -> bool:
     """Determine if both lists are identical."""
