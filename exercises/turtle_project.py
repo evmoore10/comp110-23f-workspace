@@ -68,7 +68,7 @@ def discus(speed: Turtle) -> None:
     def foul_lines(speed: Turtle) -> None:
         """Creates the sector lines."""
         speed.penup()
-        speed.width(1.5)
+        speed.width(2)
         speed.goto(190, -248)
         speed.pendown()
         speed.left(10)
@@ -96,7 +96,7 @@ def shotput(speed: Turtle) -> None:
     def foul_lines(speed: Turtle) -> None:
         """Draws the sector lines."""
         speed.penup()
-        speed.width(1.5)
+        speed.width(2)
         speed.goto(-157, 300)
         speed.pendown()
         speed.right(15)
