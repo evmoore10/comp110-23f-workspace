@@ -43,7 +43,7 @@ def background(speed: Turtle) -> None:
     """Fills background in."""
     speed.fillcolor("green")
     speed.penup()
-    speed.goto(-500 , -500)
+    speed.goto(-500, -500)
     speed.pendown()
     speed.begin_fill()
     for each in range(4):
@@ -51,42 +51,44 @@ def background(speed: Turtle) -> None:
         speed.left(90)
     speed.end_fill()
     
+
 def discus(speed: Turtle) -> None:
     """Creates discus pit."""
 
     def net(speed: Turtle) -> None:
         """Creates a net around the pit."""
         speed.penup()
-        speed.pensize(3)
+        speed.width(3)
         speed.pencolor("black")
-        speed.goto(200 , -280)
+        speed.goto(200, -280)
         speed.pendown()
-        speed.circle(60 , 200)
+        speed.circle(60, 200)
         speed.pencolor("white")
 
     def foul_lines(speed: Turtle) -> None:
         """Creates the sector lines."""
         speed.penup()
         speed.width(1.5)
-        speed.goto(190 , -248)
+        speed.goto(190, -248)
         speed.pendown()
         speed.left(10)
         speed.forward(400)
         speed.penup()
-        speed.goto(178 , -200)
+        speed.goto(178, -200)
         speed.right(35)
         speed.pendown()
         speed.forward(400)
     
     speed.fillcolor("grey")
     speed.penup()
-    speed.goto(200 , -250)
+    speed.goto(200, -250)
     speed.begin_fill()
     speed.pendown()
     speed.circle(30)
     speed.end_fill()
     net(speed)
     foul_lines(speed)
+
 
 def shotput(speed: Turtle) -> None:
     """Creates shotput pit."""
@@ -95,21 +97,21 @@ def shotput(speed: Turtle) -> None:
         """Draws the sector lines."""
         speed.penup()
         speed.width(1.5)
-        speed.goto(-157 , 300)
+        speed.goto(-157, 300)
         speed.pendown()
         speed.right(15)
         speed.forward(200)
         speed.penup()
-        speed.goto(-157 , 340)
+        speed.goto(-157, 340)
         speed.pendown()
         speed.left(30)
         speed.forward(200)
     
     speed.fillcolor("grey")
     speed.penup()
-    speed.pensize(1)
+    speed.width(1)
     speed.setheading(0)
-    speed.goto(-180 , 290)
+    speed.goto(-180, 290)
     speed.begin_fill()
     speed.pendown()
     speed.circle(30)
