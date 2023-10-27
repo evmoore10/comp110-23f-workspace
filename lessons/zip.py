@@ -6,7 +6,6 @@ __author__ = "730670009"
 def zip(keys: list[str], values: list[int]) -> dict[str, int]:
     """Assigning two lists to return a dictionary!"""
     zips: dict[str, int] = {}
-    
     if len(keys) != len(values):
         return zips
     
