@@ -20,10 +20,12 @@ def favorite_color(dict1: dict[str, str]) -> str:
         else:
             color_dict[colors] = 1
     main_color: str = ""
+    value: int = 0
     for colors in color_dict:
-        if color_dict[colors] > color_dict[main_color]:
+        if color_dict[colors] > value:
+            value += 1
             main_color = colors
-        return main_color
+    return main_color
     
 
 def count(list1: list[str]) -> dict[str, int]:
