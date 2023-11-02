@@ -1,4 +1,4 @@
-"""Test my zip function"""
+"""Test my zip function!"""
 
 __author__ = "730670009"
 
@@ -20,5 +20,5 @@ def test_birthday() -> None:
 
 
 def test_wrong_length() -> None:
-    """Test for empty list"""
+    """Test for empty list!"""
     assert zip([], []) == {}
