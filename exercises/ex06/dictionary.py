@@ -15,10 +15,10 @@ def favorite_color(dict1: dict[str, str]) -> str:
     """Return the most frequent color."""
     color_dict: dict[str, int] = {}
     for colors in dict1:
-        if colors in color_dict:
-            color_dict[colors] += 1
+        if dict1[colors] in color_dict:
+            color_dict[dict1[colors]] += 1
         else:
-            color_dict[colors] = 1
+            color_dict[dict1[colors]] = 1
     main_color: str = ""
     value: int = 0
     for colors in color_dict:
@@ -39,15 +39,15 @@ def count(list1: list[str]) -> dict[str, int]:
     return new_dict
 
 
-def alphabitizer(list1: list[str]) -> dict[str, list[str]]:
+def alphabetizer(list1: list[str]) -> dict[str, list[str]]:
     """Returns a dictionary of letters and words that belong to the letter."""
     new_dict: dict[str, list[str]] = {}
     for x in list1:
         lowercase_x = x.lower()
         if x[0] in new_dict:
-            new_dict[lowercase_x[0]] += x
+            new_dict[lowercase_x[0]] += [x]
         else:
-            new_dict[lowercase_x[0]] = x
+            new_dict[lowercase_x[0]] = [x]
     return new_dict
 
 
