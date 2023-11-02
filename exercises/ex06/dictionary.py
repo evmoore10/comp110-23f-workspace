@@ -23,7 +23,7 @@ def favorite_color(dict1: dict[str, str]) -> str:
     value: int = 0
     for colors in color_dict:
         if color_dict[colors] > value:
-            value += 1
+            value = color_dict[colors]
             main_color = colors
     return main_color
     
@@ -45,9 +45,9 @@ def alphabitizer(list1: list[str]) -> dict[str, list[str]]:
     for x in list1:
         lowercase_x = x.lower()
         if x[0] in new_dict:
-            new_dict[lowercase_x[0]] += [x]
+            new_dict[lowercase_x[0]] += x
         else:
-            new_dict[lowercase_x[0]] = [x]
+            new_dict[lowercase_x[0]] = x
     return new_dict
 
 
