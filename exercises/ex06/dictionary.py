@@ -13,6 +13,8 @@ def invert(dict1: dict[str, str]) -> dict[str, str]:
 
 def favorite_color(dict1: dict[str, str]) -> str:
     """Return the most frequent color."""
+    if (type(dict1) is not type([])): 
+        raise TypeError("Wrong data type.")
     color_dict: dict[str, int] = {}
     for colors in dict1:
         if dict1[colors] in color_dict:
@@ -30,6 +32,8 @@ def favorite_color(dict1: dict[str, str]) -> str:
 
 def count(list1: list[str]) -> dict[str, int]:
     """Returns a dictionary of the counts of items in input list."""
+    if (type(list1) is not type([])): 
+        raise KeyError("Wrong key.")
     new_dict: dict[str, int] = {}
     for x in list1:
         if x in new_dict:
