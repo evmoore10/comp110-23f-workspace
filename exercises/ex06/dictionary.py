@@ -5,6 +5,8 @@ __author__ = "730670009"
 
 def invert(dict1: dict[str, str]) -> dict[str, str]:
     """Inverts keys and the values."""
+    if (type(dict1) is not type([])): 
+        raise KeyError("Wrong key.")
     new_dict: dict[str, str] = {}
     for x in dict1:
         new_dict[dict1[x]] = x
@@ -13,8 +15,6 @@ def invert(dict1: dict[str, str]) -> dict[str, str]:
 
 def favorite_color(dict1: dict[str, str]) -> str:
     """Return the most frequent color."""
-    if (type(dict1) is not type([])): 
-        raise TypeError("Wrong data type.")
     color_dict: dict[str, int] = {}
     for colors in dict1:
         if dict1[colors] in color_dict:

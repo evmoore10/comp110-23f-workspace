@@ -1,7 +1,7 @@
 """Testing dictionary!"""
 __author__ = "730670009"
 
-from ex06.dictionary import invert, favorite_color, count, alphabetizer, update_attendance
+from exercises.ex06.dictionary import invert, favorite_color, count, alphabetizer, update_attendance
 import pytest
 
 
@@ -13,13 +13,15 @@ def invert_test_1() -> None:
 
 def invert_test_2() -> None:
     """Test if integer."""
-    test_element: dict[str,str] = {"55": "11"}
+    test_element: dict[str, str] = {"55": "11"}
     assert invert(test_element) == {"11": "55"}
 
 
 def invert_test_3() -> None:
     """Test for empty dict!"""
-    assert invert([], []) == {}
+    with pytest.raises(KeyError):
+        dict_test: list[str] = {"Error!"}
+        favorite_color(dict_test)
 
 
 def favorite_color_test_1() -> None:
@@ -36,9 +38,7 @@ def favorite_color_test_2() -> None:
 
 def favorite_color_test_3() -> None:
     """Test if using wrong type."""
-    with pytest.raises(TypeError):
-        dict_test: dict[str, str] = {"stor": "155"}
-        favorite_color(dict_test)
+    assert favorite_color([], []) == {}
 
 
 def count_test_1() -> None:
@@ -63,13 +63,13 @@ def count_test_3() -> None:
 def alphabetizer_test_1() -> None:
     """Test when two different starting letters."""
     letter_test: list[str] = ["Comp", "Math"]
-    assert alphabetizer(letter_test) == {"C": ["Comp"], "M": ["Math"]}
+    assert alphabetizer(letter_test) == {"c": ["Comp"], "m": ["Math"]}
 
 
 def alphabetizer_test_2() -> None:
     """Test when same starting letter."""
     same_letter_test: list[str] = ["Comp", "Computer"]
-    assert alphabetizer(same_letter_test) == {"C": ["Comp", "Computer"]}
+    assert alphabetizer(same_letter_test) == {"c": ["Comp", "Computer"]}
 
 
 def alphabetizer_test_3() -> None:
@@ -87,7 +87,7 @@ def update_attendance_test_1() -> None:
 
 
 def update_attendance_test_2() -> None:
-    """Update attendance for student under multiple days and names"""
+    """Update attendance for student under multiple days and names."""
     dict_test: dict[str, list[str]] = {"Saturday": [], "Sunday": []}
     day: str = "Saturday", "Sunday"
     student: str = "Evan", "Moore"
@@ -99,4 +99,4 @@ def update_attendance_test_3() -> None:
     dict_test: dict[str, list[str]] = {"Saturday": ["Evan"]}
     day: str = "Saturday"
     student: str = "Evan"
-    assert update_attendance(dict_test, day, student) == {"Saturday": ["Evan"]}
+    assert update_attendance(dict_test, day, student) == {"Saturday": ["Evan", "Evan"]}
