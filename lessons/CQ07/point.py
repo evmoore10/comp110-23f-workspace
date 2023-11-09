@@ -6,10 +6,10 @@ from __future__ import annotations
 
 class Point:
     """Class for point."""
-    x: float = 0.0
-    y: float = 0.0
+    x: float
+    y: float
 
-    def __init__(self, x_init: float, y_init: float):
+    def __init__(self, x_init: float = 0.0, y_init: float = 0.0):
         """Creating points!"""
         self.x = x_init
         self.y = y_init
@@ -26,15 +26,15 @@ class Point:
     
     def __str__(self) -> str:
         "Printing out points."
-        return (f"x: {self.x}, y: {self.y}")
+        return (f"x: {self.x}; y: {self.y}")
     
-    def __mul__(self, factor: int | float):
+    def __mul__(self, factor: float | int) -> Point:
         """Multiplying points."""
         x_val = self.x * factor
         y_val = self.y * factor
         return(x_val, y_val)
     
-    def __add__(self, factor: float | int):
+    def __add__(self, factor: float | int) -> Point:
         """Adding number to points."""
         x_val = self.x + factor
         y_val = self.y + factor
