@@ -45,3 +45,12 @@ class Pizza:
         """Make new pizza order using existing info"""
         new_pizza: Pizza = Pizza(self.size, self.toppings + num_toppings, self.gluten_free)
         return new_pizza
+    
+    def __str__(self) -> str:
+        """Result when I call str()"""
+        return "This is a pizza!"
+    
+my_pizza: Pizza = Pizza("medium", 3, False)
+print(str(my_pizza))
+sals_pizza: Pizza = Pizza("large", 3, True)
+print(str(sals_pizza))
