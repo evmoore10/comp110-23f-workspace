@@ -37,9 +37,9 @@ def test_favorite_color_2() -> None:
 
 
 def test_favorite_color_3() -> None:
-    """Test if using wrong type."""
-    dict_test: list[str] = []
-    assert alphabetizer(dict_test) == {}
+    """Empty."""
+    dict_test: dict[str, str] = []
+    assert favorite_color(dict_test) == ""
 
 
 def test_count_1() -> None:
@@ -64,13 +64,13 @@ def test_count_3() -> None:
 def test_alphabetizer_1() -> None:
     """Test when two different starting letters."""
     letter_test: list[str] = ["Comp", "Math"]
-    assert alphabetizer(letter_test) == {"c": ["Comp"], "m": ["Math"]}
+    assert alphabetizer(letter_test) == {'c': ["Comp"], 'm': ["Math"]}
 
 
 def test_alphabetizer_2() -> None:
     """Test when same starting letter."""
     same_letter_test: list[str] = ["Comp", "computer"]
-    assert alphabetizer(same_letter_test) == {"c": ["Comp", "computer"]}
+    assert alphabetizer(same_letter_test) == {'c': ["Comp", "computer"]}
 
 
 def test_alphabetizer_3() -> None:
@@ -97,7 +97,7 @@ def test_update_attendance_2() -> None:
 
 def test_update_attendance_3() -> None:
     """Test if student attend same day again."""
-    dict_test: dict[str, list[str]] = {"Saturday": ["Evan"]}
+    dict_test: dict[str, list[str]] = {'Saturday': ['Evan']}
     day: str = "Saturday"
     student: str = "Evan"
-    assert update_attendance(dict_test, day, student) == {"Saturday": ["Evan", "Evan"]}
+    assert update_attendance(dict_test, day, student) == {"Saturday": ['Evan', 'Evan']}
