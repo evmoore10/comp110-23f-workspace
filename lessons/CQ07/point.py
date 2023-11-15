@@ -25,17 +25,17 @@ class Point:
         return new_point
     
     def __str__(self) -> str:
-        "Printing out points."
+        """Printing out points."""
         return (f"x: {self.x}; y: {self.y}")
     
-    def __mul__(self, factor: float | int) -> Point:
+    def __mul__(self, factor: int | float) -> Point:
         """Multiplying points."""
-        x_val = self.x * factor
-        y_val = self.y * factor
-        return(x_val, y_val)
+        x_val: float = self.x * factor
+        y_val: float = self.y * factor
+        return Point(x_val, y_val)
     
-    def __add__(self, factor: float | int) -> Point:
+    def __add__(self, factor: int | float) -> Point:
         """Adding number to points."""
-        x_val = self.x + factor
-        y_val = self.y + factor
-        return (x_val, y_val)
+        x_val: float = self.x + factor
+        y_val: float = self.y + factor
+        return Point(x_val, y_val)
